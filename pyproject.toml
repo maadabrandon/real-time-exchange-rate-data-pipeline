@@ -7,6 +7,9 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.11"
+polygon-api-client = "^1.13.4"
+python-dotenv = "^1.0.1"
+websocket = "^0.2.1"
 
 
 [build-system]
