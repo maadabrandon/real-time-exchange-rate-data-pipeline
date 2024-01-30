@@ -27,4 +27,3 @@ try:
 
 except socket.error as error:
     print(f"Websocket connection error: {error}")
-

@@ -1,0 +1,1 @@
+# Buidling a Containerized stream processing application to process Forex prices with Apache Kafka.
