@@ -7,6 +7,7 @@ from quixstreams.platforms.quix import QuixKafkaConfigsBuilder, TopicCreationCon
 
 logger = logging.getLogger()
 
+
 class ProducerWrapper:
 
     """ 
@@ -38,7 +39,7 @@ class ProducerWrapper:
             # Connect to a local Kafka cluster
             self._producer = Producer(
                 broker_address=os.environ["KAFKA_BROKER"],
-                extra_config=("allow.auto.create.topics": "true")
+                extra_config={"allow.auto.create.topics": "true"}
                 )
         
         else:
@@ -62,7 +63,6 @@ class ProducerWrapper:
                 extra_config=cfgs
             )
 
-
     def produce(
             self,
             key,
@@ -80,7 +80,6 @@ class ProducerWrapper:
 
     def __enter__(self):
         return self 
-
 
     def __exit__(self, exc_type, exc_value, traceback):
 

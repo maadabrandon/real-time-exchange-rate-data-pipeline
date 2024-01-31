@@ -38,6 +38,7 @@ def initialise_logger(
 
 
 def load_env_variables():
+    
     """Load all the environment variables from the .env file"""
     load_dotenv(
         dotenv_path=find_dotenv()
