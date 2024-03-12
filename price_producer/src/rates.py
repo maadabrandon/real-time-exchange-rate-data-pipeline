@@ -1,8 +1,8 @@
 import json
 from pydantic import BaseModel
-from typing import Optional, List, Dict
+from typing import List, Dict
 
-class Quote(BaseModel):
+class Rates(BaseModel):
     
     event_type: str
     pair: List[str] 
@@ -13,14 +13,14 @@ class Quote(BaseModel):
     
     def to_str(self):
         
-        """ Returns a string representation of the Quotes object """
+        """ Returns a string representation of the Rates object """
         
         return json.dumps(self.model_dump())
         
         
     def to_dict(self) -> Dict[str, any]:
         
-        """ Turn the returned Quotes object to a dictionary """
+        """ Turn the returned rates object into a dictionary """
         
         return {
             "event_type": self.event_type,

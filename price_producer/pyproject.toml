@@ -6,13 +6,17 @@ authors = ["Kobina Brandon <maadabrandon@protonmail.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.11"
+python = "^3.12"
 polygon-api-client = "^1.13.4"
 python-dotenv = "^1.0.1"
 websocket = "^0.2.1"
-pylance = "^0.9.10"
 pyyaml = "^6.0.1"
 quixstreams = ">=2.0a"
+pydantic = "^2.6.0"
+ipykernel = "^6.29.0"
+loguru = "^0.7.2"
+pydantic-settings = "^2.2.1"
+ruff = "^0.3.2"
 
 
 [build-system]

@@ -1,3 +1,4 @@
 .env
 .idea
-/src/__pycache__
+/price_producer/src/__pycache__
+.ruff_cache

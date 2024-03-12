@@ -1,11 +1,10 @@
 import os
 import json
-import logging
 from typing import Optional
+
+from loguru import logger
 from quixstreams.kafka import Producer
 from quixstreams.platforms.quix import QuixKafkaConfigsBuilder, TopicCreationConfigs
-
-logger = logging.getLogger()
 
 
 class ProducerWrapper:
@@ -38,7 +37,7 @@ class ProducerWrapper:
 
             # Connect to a local Kafka cluster
             self._producer = Producer(
-                broker_address=os.environ["KAFKA_BROKER"],
+                broker_address=os.getenv("KAFKA_BROKER"),
                 extra_config={"allow.auto.create.topics": "true"}
                 )
         
