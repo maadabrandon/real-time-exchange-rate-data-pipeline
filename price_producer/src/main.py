@@ -3,7 +3,7 @@ from dotenv import load_dotenv
 
 from loguru import logger
 
-from src.feed import polygon_client
+from src.feed import polygon_client, handle_msg
 from src.producer_wrapper import ProducerWrapper
 
 
@@ -19,13 +19,12 @@ def run():
     
         while True:
 
-            prices = polygon_client.feed()
+            prices = polygon_client.run(handle_msg=handle_msg)
 
             if not prices:
-
                 continue 
 
-            logger.info("Got prices from the Polygon API")
+            logger.info("Got ask and bid prices from the Polygon API")
 
             for price in prices:
 

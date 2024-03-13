@@ -2,7 +2,7 @@ import json
 from pydantic import BaseModel
 from typing import List, Dict
 
-class Rates(BaseModel):
+class Prices(BaseModel):
     
     event_type: str
     pair: List[str] 
@@ -13,14 +13,14 @@ class Rates(BaseModel):
     
     def to_str(self):
         
-        """ Returns a string representation of the Rates object """
+        """ Returns a string representation of the Prices object """
         
         return json.dumps(self.model_dump())
         
         
     def to_dict(self) -> Dict[str, any]:
         
-        """ Turn the returned rates object into a dictionary """
+        """ Turn the returned Prices object into a dictionary """
         
         return {
             "event_type": self.event_type,
@@ -29,4 +29,3 @@ class Rates(BaseModel):
             "bid_price": self.bid_price, 
             "timestamp": self.timestamp
         }
-    
